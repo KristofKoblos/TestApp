@@ -51,7 +51,7 @@
     <script type="text/javascript">
       $(document).ready(function() {
         $('.get-json').click(function() {
-          $.post('post.php', function(data, status) {
+          $.post('192.168.1.15/ratchet-v2.0.2/post.php', function(data, status) {
             $('.json-content').html('Name: ' + data.name +
                                     '<br/>Age: ' + data.age +
                                     '<br/>Gender: ' + data.gender);
