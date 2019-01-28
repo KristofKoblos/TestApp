@@ -34,6 +34,8 @@
     <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
     <div class="content">
       <div class="content-padded">
+        <span class="json-content"></span>
+        <button class="btn btn-block btn-outlined get-json">Get JSON</button>
       </div>
       <nav class="bar bar-tab">
         <a class="tab-item active" href="#">
@@ -48,8 +50,12 @@
     </div>
     <script type="text/javascript">
       $(document).ready(function() {
-        $('.icon-home').click(function() {
-          alert('test');
+        $('.get-json').click(function() {
+          $.post('post.php', function(data, status) {
+            $('.json-content').html('Name: ' + data.name +
+                                    '<br/>Age: ' + data.age +
+                                    '<br/>Gender: ' + data.gender);
+          }, 'json');
         });
       });
     </script>
